@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';
 import style from './Input.module.scss';
 
 type InputPropsType = {
@@ -10,13 +10,11 @@ type InputPropsType = {
   // type?: 'text' | 'password';
 };
 
-const Input = ({ title, id, placeholder }: InputPropsType) => {
-  return (
-    <label className={style.wrapper} htmlFor={id}>
-      <span>{title}</span>
-      <input id={id} placeholder={placeholder} />
-    </label>
-  );
-};
+const Input = ({ title, id, placeholder }: InputPropsType) => (
+  <label className={style.wrapper} htmlFor={id}>
+    <span>{title}</span>
+    <input id={id} placeholder={placeholder} />
+  </label>
+);
 
 export default Input;

@@ -1,12 +1,57 @@
-.footer {
-  height: 120px;
-  background-color: #f2f2f2;
-  width: 100%;
-}
+  .footer {
+    grid-area: 'footer';
+    width: 100%;
+    background-color: #f2f2f2;
+    & > div {
+      display: flex;
+      max-width: 1164px;
+      min-height: 120px;
+      align-items: center;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+  }
 
-.footer_container {
-  max-width: 1169px;
+.footer_logo {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+.logo_title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  margin-right: 24px;
+}
+
+
+.logo_text {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-right: 24px;
+  margin-left: 24px;
+}
+
+.footer_copyright {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.footer_icons a{
+  margin-right: 24px;
+}
+

@@ -1,4 +1,62 @@
 .header {
   display: flex;
   justify-content: space-between;
+  max-width: 1168px;
+  min-height: 72px;
+  margin: 0 auto;
+
+  grid-area: 'header';
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.logo_text {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  margin-left: 4px;
+  align-items: center;
+}
+
+.header_search {
+  max-width: 565px;
+  max-height: 36px;
+  // border: 1px solid #4877F2;
+  // box-sizing: border-box;
+  // border-radius: 4px;
+  & > Button{
+    width: 96px;
+    height: 36px;
+
+  }
+}
+
+.header_account {
+  max-width: 67px;
+  max-height: 24px;
+}
+
+.header_input {
+  font-size: 16px;
+  border: 1px solid #4877F2;
+  box-sizing: border-box;
+  border-radius: 4px; 
+  max-width: 469px;
+  max-height: 18px;
+
+  
+  // position: relative;
+  // left: 29.69%;
+  // right: 40.89%;
+  // top: 25%;
+  // bottom: 25%;
 }

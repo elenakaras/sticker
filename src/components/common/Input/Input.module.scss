@@ -1,22 +1,8 @@
 .wrapper {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 36px;
-  width: 100%;
-
-  
-
-  // & > span {
-  //   font-family: $text;
-  //   font-size: $text-size;
-  // }
-
-  & > input {
-    font-size: 16px;
-    border: 1px solid #4877F2;
-    box-sizing: border-box;
-    border-radius: 4px; 
-
-  }
+  // max-width: 565px;
+  // max-height: 18px;
+  border: 1px solid #4877F2;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
