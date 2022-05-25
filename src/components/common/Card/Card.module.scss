@@ -2,6 +2,10 @@
   max-width: 363px;
   max-height: 448px;
   margin-bottom: 40px;
+  background: #FFFFFF;
+  border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 8px 36px rgba(42, 47, 55, 0.06);
+
 }
 
 .card_image {
@@ -33,6 +37,7 @@
 .card_content {
   display: flex;
   flex-direction: column;
+  margin-left: 24px;
 }
 
 .card_title {
@@ -44,11 +49,15 @@
 }
 
 .card_description {
+  width: 260px;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
+  color: #2C2D2E;
+  opacity: 0.8;
+  margin-bottom: 40px;
 }
 
 .card_price {
@@ -58,11 +67,16 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  // margin-top: 40px;
+  margin-right: 24px;
 }
 
 .card_activity {
   display: flex;
   justify-content: space-between;
+  margin-left: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 .card_date {
   font-family: 'Jost';
@@ -71,11 +85,16 @@
   font-size: 14px;
   line-height: 24px;
   color: #1D1D1D;
+  color: #2C2D2E;
+  opacity: 0.4;
 }
 
 .card_views {
   display: flex;
   align-items: center;
+  color: #2C2D2E;
+  opacity: 0.4;
+  margin-right: 24px;
 }
 
 .card_views img {

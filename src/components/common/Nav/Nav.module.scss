@@ -1,0 +1,45 @@
+.nav {
+  width: 950px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+.main_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  padding-left: 0;
+
+  height: 0;
+}
+
+
+.main_menu:last-child {
+  margin-right: 0px;
+}
+
+.main_menuLink {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.main_menuLink:focus {
+  background: #FFAC28;
+}
+
+.main_menuLink:active {
+  background: #FFAC28;
+  // border-radius: 35px;
+}
+
+.main_menuLink:hover {
+  border: 1px solid #4877F2;
+  color: #4877F2;
+  border-radius: 35px;
+  padding: 8px 24px 8px 24px;
+}

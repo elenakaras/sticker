@@ -14,9 +14,13 @@ const Header = () => (
       <label htmlFor="{id}">
         <input className={style.header_input} type="text" />
       </label>
-      <Button title="Искать" onClick={() => console.log('Искать')} />
+      <div className={style.button_search}>
+        <Button title="Искать" onClick={() => console.log('Искать')} />
+      </div>
     </div>
-    <Button title="Подать объявление" onClick={() => console.log('Подать объявление')} />
+    <div className={style.button_primary}>
+      <Button title="Подать объявление" onClick={() => console.log('Подать объявление')} />
+    </div>
     <div className={style.header_account}>
       <img src={user} alt="user" />
       <span>Войти</span>

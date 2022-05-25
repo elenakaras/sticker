@@ -1,16 +1,11 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   max-width: 1168px;
   min-height: 72px;
   margin: 0 auto;
-
-  grid-area: 'header';
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
-
+  
   & > div {
     display: flex;
     align-items: center;
@@ -30,14 +25,9 @@
 .header_search {
   max-width: 565px;
   max-height: 36px;
-  // border: 1px solid #4877F2;
-  // box-sizing: border-box;
-  // border-radius: 4px;
-  & > Button{
-    width: 96px;
-    height: 36px;
-
-  }
+  border: 1px solid #4877F2;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .header_account {
@@ -52,11 +42,61 @@
   border-radius: 4px; 
   max-width: 469px;
   max-height: 18px;
+  position: relative;
+}
 
-  
-  // position: relative;
-  // left: 29.69%;
-  // right: 40.89%;
-  // top: 25%;
-  // bottom: 25%;
+.button_search .button {
+  width: 96px;
+  height: 36px;
+  padding: 6px 26px;
+  color: white;
+  text-decoration: none;
+  outline: none;
+  border-width: 2px 0;
+  border-style: solid none;
+  border-radius: 4px;
+  background-color: #4877F2;
+  border-radius: 0px 4px 4px 0px;
+  transition: 0.2s;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+
+  position: absolute;
+}
+
+.button_search:hover {
+  background: #1d49aa;
+}
+
+.button_search:active {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
+
+.button_primary button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 40px;
+  background-color: #FFAC28;
+  border-radius: 4px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #2C2D2E;
+}
+
+.button_primary:hover button{
+  background: #ee9f20;
+}
+
+.button_primary:active button {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
 }

@@ -1,3 +1,48 @@
-.page_wrapper {
+// .page_wrapper {
+//   background: #E5E5E5;
  
+// }
+
+.button_more {
+  display: flex;
+  align-items: center;
+  width: 242px;
+  height: 48px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.button_more img {
+  position: absolute;
+  left: 685px;
+}
+
+.button_more button {
+  width: 242px;
+  height: 48px;
+  border: 1px solid #4877F2;
+  border-radius: 4px;
+  background-color: #FFFF;
+  
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4877F2;
+  padding: 12px 52px 12px 70px; 
+
+  margin: 0 auto;
+  
+}
+
+
+.button_more:hover {
+  background: #FFFF;;
+
+}
+
+.button_more:active {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
 }
