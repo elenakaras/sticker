@@ -1,4 +1,6 @@
 import React from 'react';
+// import { Button } from 'antd';
+import Button from '../../components/common/Button';
 import Banner from '../../components/common/Banner';
 import Card from '../../components/common/Card/Card';
 import Nav from '../../components/common/Nav/nav';
@@ -13,6 +15,8 @@ import bag from '../../components/common/images/cards/bag.png';
 import shoes from '../../components/common/images/cards/shoes.png';
 import snowboarding from '../../components/common/images/cards/snowboarding.png';
 import PageWrapper from '../../components/common/PageWrapper';
+import arrow from '../../components/common/images/icons/arrow.svg';
+import style from './MainPage.module.scss';
 
 const MainPage = () => (
   <PageWrapper>
@@ -22,7 +26,7 @@ const MainPage = () => (
     <div className="main_menu">
       <Nav />
     </div>
-    <div className="main_content">
+    <div className={style.main_content}>
       <Card
         title="Стиральная машина Bosch"
         img={machine}
@@ -119,6 +123,10 @@ const MainPage = () => (
         date="14 апреля 2021"
         icon={eye}
         views="356" />
+    </div>
+    <div className={style.button_more}>
+      <img src={arrow} alt="arrow" />
+      <Button title="Загрузить еще" onClick={() => console.log('Загрузить еще')} />
     </div>
   </PageWrapper>
 );
