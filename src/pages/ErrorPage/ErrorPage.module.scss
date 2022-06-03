@@ -1,0 +1,40 @@
+.error_page {
+  max-width: 1172px;
+  max-height: 412px;
+  display: flex;
+  justify-content: space-evenly; 
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 436px;
+  align-items: center;
+}
+
+.error_text {
+  display:flex;
+  flex-direction: column;
+  font-family: 'Jost';
+  font-style: normal;
+  max-height: 144px;
+  color: #2C2D2E;
+}
+
+.error_title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #2C2D2E;
+}
+
+.error_suptitle {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  opacity: 0.8;
+}
+
+.error_text span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 0.8;
+}

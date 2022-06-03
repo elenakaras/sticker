@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import 'antd/dist/antd.css';
-import { Form, Input, Button, Checkbox } from 'antd';
-import type { CheckboxChangeEvent } from 'antd/es/checkbox';
+import { Form, Input, Button } from 'antd';
 import style from './AuthPage.module.scss';
 import PageWrapper from '../../components/common/PageWrapper';
 
@@ -12,14 +11,6 @@ const RegistrationPage: React.FC = () => {
 
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
-  };
-
-  const [checked, setChecked] = useState(true);
-  const [disabled] = useState(false);
-
-  const onChange = (e: CheckboxChangeEvent): void => {
-    console.log('checked = ', e.target.checked);
-    setChecked(e.target.checked);
   };
 
   return (
@@ -39,20 +30,6 @@ const RegistrationPage: React.FC = () => {
         autoComplete="off"
       >
         <Form.Item
-          name="name"
-          rules={[{ required: true, message: 'Имя' }]}
-        >
-          <Input className={style.input} placeholder="Имя" />
-        </Form.Item>
-
-        <Form.Item
-          name="surname"
-          rules={[{ required: true, message: 'Фамилия' }]}
-        >
-          <Input className={style.input} placeholder="Фамилия" />
-        </Form.Item>
-
-        <Form.Item
           name="email"
           rules={[{ required: true, message: 'Email' }]}
         >
@@ -65,22 +42,6 @@ const RegistrationPage: React.FC = () => {
         >
           <Input.Password className={style.input} placeholder="Пароль" />
         </Form.Item>
-
-        <Form.Item
-          name="password"
-          rules={[{ required: true, message: 'Повторите пароль' }]}
-        >
-          <Input.Password className={style.input} placeholder="Повторите пароль" />
-        </Form.Item>
-
-        <p className={style.form_checkbox}>
-          <Checkbox checked={checked} disabled={disabled} onChange={onChange}>
-            Принимаю условия
-            {' '}
-            <br />
-            Пользовательского соглашения
-          </Checkbox>
-        </p>
 
         <Form.Item>
           <Button className={style.form_button} type="primary" htmlType="submit">
