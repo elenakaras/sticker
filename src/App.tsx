@@ -4,6 +4,7 @@ import './App.css';
 // import MainContainer from './containers/MainContainer';
 // import RegistrationContainer from './containers/RegistrationContainer';
 // import TabFormContainer from './containers/TabFormContainer';
+import ProductCardPage from './pages/ProductCardPage';
 
 const App = () => (
   <>
@@ -11,6 +12,7 @@ const App = () => (
     {/* <RegistrationContainer /> */}
     {/* <TabFormContainer /> */}
     {/* <ErrorContainer /> */}
+    <ProductCardPage />
   </>
 );
 

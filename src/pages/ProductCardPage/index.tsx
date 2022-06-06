@@ -1,78 +1,59 @@
 import React from 'react';
-import { YMaps, Map } from '@pbe/react-yandex-maps';
-import { Button } from 'antd';
+// import style from 'styled-components';
+
+import { Carousel } from 'antd';
 import PageWrapper from '../../components/common/PageWrapper';
-import style from './ProductCard.module.scss';
+import ProductCard from '../../components/common/ProductCard';
+import arrowBack from '../../components/common/images/icons/arrowBack.svg';
+import eye from '../../components/common/images/icons/eye.svg';
+import samsung from '../../components/common/images/ProductCard/samsung.png';
+import indesit from '../../components/common/images/ProductCard/indesit.png';
+import bosch1 from '../../components/common/images/ProductCard/bosch1.png';
+import bosch2 from '../../components/common/images/ProductCard/bosch2.png';
+import bosch3 from '../../components/common/images/ProductCard/bosch3.png';
+import bosch4 from '../../components/common/images/ProductCard/bosch4.png';
+import CardMore from '../../components/common/CardMore';
 
-type ProductCardPropsType = {
-  title: string;
-  img: string;
-  alt: string;
-  icon: string;
-  description: string;
-  price: string;
-  date: string;
-  views: string;
-};
-
-const ProductCard = (props: ProductCardPropsType) => {
-  const { img, alt } = props;
-  const { title, description } = props;
-  const { price } = props;
-  const { date, icon, views } = props;
-  return (
-    <PageWrapper>
-      <div className={style.productCard}>
-        <div className={style.arrowBack}>
-          <img src={img} alt={alt} />
-        </div>
-        <div className={style.productCard_date}>{date}</div>
-        <div className={style.productCard_title}>{title}</div>
-        <div className={style.card_views}>
-          <img className="card_views-eye" src={icon} alt={alt} />
-          <span>{views}</span>
-        </div>
-        <div>КАРУСЕЛЬ</div>
-        <div className={style.productCard_description}>
-          <p className={style.description_title}>{title}</p>
-          <span className={style.description_text}>
-            {description}
-          </span>
-        </div>
-        <div className={style.productCard_location}>
-          <p className={style.location_title}>{title}</p>
-          <YMaps>
-            <div>
-              <Map defaultState={{ center: [56.299856, 43.982585], zoom: 9 }} />
-            </div>
-          </YMaps>
-        </div>
-        <div>
-          <div className={style.productCard_price}>{price}</div>
-          <Button />
-          <div className={style.productCard_more}>
-            <p>Смотрите также:</p>
-            <img src={img} alt={alt} />
-            <span>
-              Стиральная машина
-              {' '}
-              <br />
-              {' '}
-              Samsung
-            </span>
-            <img src={img} alt={alt} />
-            <span>
-              Стиральная машина
-              {' '}
-              <br />
-              {' '}
-              Indesit
-            </span>
-          </div>
-        </div>
+const ProductCardPage = () => (
+  <PageWrapper>
+    <ProductCard
+      arrowBack={arrowBack}
+      title="Стиральная машина Bosch"
+      alt="Стиральная машина"
+      descriptionTitle="Описание"
+      description="Стиральная машина в отличном состянии, чистая, без накипи. С машиной отдам новый шланг для подключения воды и упаковку средства против накипи."
+      price="22 500 Р"
+      date="14 апреля 2022"
+      icon={eye}
+      views="356"
+    />
+    <Carousel autoplay>
+      <div className="carousel_item">
+        <img src={bosch1} alt="Стиральная машина Bosch" />
       </div>
-    </PageWrapper>
-  );
-};
+      <div className="carousel_item">
+        <img src={bosch2} alt="Стиральная машина Bosch" />
+      </div>
+      <div className="carousel_item">
+        <img src={bosch3} alt="Стиральная машина Bosch" />
+      </div>
+      <div className="carousel_item">
+        <img src={bosch4} alt="Стиральная машина Bosch" />
+      </div>
+    </Carousel>
+    <CardMore
+      title="Смотрите также:"
+      img={samsung}
+      cardTitle="Стиральная машина Samsung"
+      alt="Стиральная машина Samsung"
+     />
+    <CardMore
+      title="Смотрите также:"
+      img={indesit}
+      cardTitle="Стиральная машина Indesit"
+      alt="Стиральная машина Indesit"
+     />
+  </PageWrapper>
+);
 
-export default ProductCard;
+export default ProductCardPage;
