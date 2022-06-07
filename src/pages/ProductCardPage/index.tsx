@@ -1,7 +1,6 @@
 import React from 'react';
 // import style from 'styled-components';
 
-import { Carousel } from 'antd';
 import PageWrapper from '../../components/common/PageWrapper';
 import ProductCard from '../../components/common/ProductCard';
 import arrowBack from '../../components/common/images/icons/arrowBack.svg';
@@ -13,6 +12,7 @@ import bosch2 from '../../components/common/images/ProductCard/bosch2.png';
 import bosch3 from '../../components/common/images/ProductCard/bosch3.png';
 import bosch4 from '../../components/common/images/ProductCard/bosch4.png';
 import CardMore from '../../components/common/CardMore';
+import CardCarousel from '../../components/common/Carousel';
 
 const ProductCardPage = () => (
   <PageWrapper>
@@ -20,14 +20,15 @@ const ProductCardPage = () => (
       arrowBack={arrowBack}
       title="Стиральная машина Bosch"
       alt="Стиральная машина"
-      descriptionTitle="Описание"
+      descriptionTitle="Описание:"
       description="Стиральная машина в отличном состянии, чистая, без накипи. С машиной отдам новый шланг для подключения воды и упаковку средства против накипи."
       price="22 500 Р"
       date="14 апреля 2022"
       icon={eye}
       views="356"
+      locationTitle="Местоположение:  г. Кстово"
     />
-    <Carousel autoplay>
+    <CardCarousel>
       <div className="carousel_item">
         <img src={bosch1} alt="Стиральная машина Bosch" />
       </div>
@@ -40,7 +41,7 @@ const ProductCardPage = () => (
       <div className="carousel_item">
         <img src={bosch4} alt="Стиральная машина Bosch" />
       </div>
-    </Carousel>
+    </CardCarousel>
     <CardMore
       title="Смотрите также:"
       img={samsung}
