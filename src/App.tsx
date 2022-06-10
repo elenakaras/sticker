@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import ProductCardContainer from './containers/ProductCardContainer';
 // import PageWrapper from './components/common/PageWrapper';
 // import AuthContainer from './containers/AuthContainer';
 // import ErrorContainer from './containers/ErrorContainer';
 // import MainContainer from './containers/MainContainer';
-// import RegistrationContainer from './containers/RegistrationContainer';
+import RegistrationContainer from './containers/RegistrationContainer';
 // import TabFormContainer from './containers/TabFormContainer';
-import ProductCardPage from './pages/ProductCardPage';
 
 const App = () => (
   <>
@@ -16,7 +16,7 @@ const App = () => (
     {/* <AuthContainer /> */}
     {/* <TabFormContainer /> */}
     {/* <ErrorContainer /> */}
-    <ProductCardPage />
+    <ProductCardContainer />
   </>
 );
 

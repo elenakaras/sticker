@@ -1,6 +1,6 @@
 import { Carousel } from 'antd';
 import React from 'react';
-// import style from './CardCarousel.module.scss';
+import style from './CardCarousel.module.scss';
 
 type CardCarouselPropsType = {
   // alt: string;
@@ -10,6 +10,7 @@ type CardCarouselPropsType = {
 
 const CardCarousel = ({ children }: CardCarouselPropsType) => (
   <Carousel autoplay>
+    <div className={style.cardCarousel}>{children}</div>
     {/* <div className={style.carousel_item}>
         <img src={img} alt={alt} />
       </div>
@@ -22,7 +23,6 @@ const CardCarousel = ({ children }: CardCarouselPropsType) => (
       <div className={style.carousel_item}>
         <img src={img} alt={alt} />
       </div> */}
-    {children}
   </Carousel>
 );
 
