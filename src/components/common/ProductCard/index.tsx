@@ -5,28 +5,31 @@ import style from './ProductCard.module.scss';
 import CardCarousel from '../Carousel';
 
 type ProductCardPropsType = {
-  title: string;
-  alt: string;
-  icon: string;
-  description: string;
-  price: string;
-  date: string;
-  views: string;
-  arrowBack: string;
-  descriptionTitle: string;
-  locationTitle: string;
+  // title: string;
+  // alt: string;
+  // icon: string;
+  // description: string;
+  // price: string;
+  // date: string;
+  // views: string;
+  // arrowBack: string;
+  // descriptionTitle: string;
+  // locationTitle: string;
+  children: React.ReactNode;
+  // img: string;
 };
 
 const ProductCard = (props: ProductCardPropsType) => {
-  const { title, locationTitle } = props;
-  const { alt } = props;
-  const { descriptionTitle, description } = props;
-  const { price } = props;
-  const { date, arrowBack, views, icon } = props;
-  // const { img } = props;
+  // const { title, locationTitle } = props;
+  // const { alt } = props;
+  // const { descriptionTitle, description } = props;
+  // const { price } = props;
+  // const { date, arrowBack, views, icon } = props;
+  const { children } = props;
   return (
     <div className={style.productCard}>
-      <div className={style.arrowBack}>
+      { children }
+      {/* <div className={style.arrowBack}>
         <img src={arrowBack} alt={alt} />
       </div>
       <div className={style.productCard_date}>{date}</div>
@@ -35,9 +38,9 @@ const ProductCard = (props: ProductCardPropsType) => {
         <img className="card_views-eye" src={icon} alt={alt} />
         <span>{views}</span>
       </div>
-      <div className={style.cardCarousel}>
-        <CardCarousel />
-      </div>
+      <CardCarousel>
+        {children}
+      </CardCarousel>
       <div className={style.productCard_description}>
         <p className={style.description_title}>{descriptionTitle}</p>
         <span className={style.description_text}>
@@ -55,7 +58,7 @@ const ProductCard = (props: ProductCardPropsType) => {
       <div>
         <div className={style.productCard_price}>{price}</div>
         <Button />
-      </div>
+      </div> */}
     </div>
   );
 };

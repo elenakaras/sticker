@@ -1,0 +1,103 @@
+.productCard {
+ max-width: 1172px;
+ min-height: 1253px;
+ margin: 0 auto;
+
+}
+
+style.productCard_left {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.arrowBack {
+  margin-bottom: 32px;
+}
+
+.productCard_date {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #2A2F37;
+  background-color: rgba(42, 47, 55, 0.06);
+  width: 154px;
+  height: 40px;
+  padding-left: 16px;
+  margin-bottom: 24px;
+}
+
+.productCard_title {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #2A2F37;
+  margin-bottom: 24px;
+}
+
+.card_views {
+  display: flex;
+  justify-content: space-between;
+  width: 57px;
+  height: 24px;
+  left: 376px;
+  top: 328px;
+  opacity: 0.4;
+  margin-bottom: 24px;
+}
+
+.productCard_description {
+  font-family: 'Jost';
+  font-style: normal;
+  line-height: 24px;
+  display: flex;
+  // align-items: center;
+  color: #2A2F37;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.description_title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.description_text {
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.location_title {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+
+  color: #2A2F37;
+
+  opacity: 0.8;
+}
+
+.location_title span {
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.location_map {
+  // max-width: 766px;
+  // max-height: 325px;
+  width: 100%;
+  height: 500px;
+}
