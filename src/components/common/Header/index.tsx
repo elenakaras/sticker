@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Button from '../Button';
 import style from './Header.module.scss';
 import logo from '../images/icons/logo.svg';
@@ -7,8 +8,8 @@ import user from '../images/icons/user.svg';
 const Header = () => (
   <header className={style.header}>
     <div className={style.logo}>
-      <img src={logo} alt="logo" />
-      <div className={style.logo_text}>СТИКЕР</div>
+      <NavLink to="/"><img src={logo} alt="logo" /></NavLink>
+      <NavLink to="/"><div className={style.logo_text}>СТИКЕР</div></NavLink>
     </div>
     <div className={style.header_search}>
       <label htmlFor="{id}">
@@ -23,7 +24,7 @@ const Header = () => (
     </div>
     <div className={style.header_account}>
       <img src={user} alt="user" />
-      <span>Войти</span>
+      <NavLink to="/auth"><span>Войти</span></NavLink>
     </div>
   </header>
 );

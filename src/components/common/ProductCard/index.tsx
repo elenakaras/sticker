@@ -1,66 +1,50 @@
 import React from 'react';
-import { YMaps, Map } from '@pbe/react-yandex-maps';
-import { Button } from 'antd';
+// import { YMaps, Map } from '@pbe/react-yandex-maps';
 import style from './ProductCard.module.scss';
-import CardCarousel from '../Carousel';
+// import CardCarousel from './Carousel';
+import Preview from './Preview';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import 'react-alice-carousel/lib/scss/alice-carousel.scss';
+import samsung from '../images/ProductCard/samsung.png';
+import indesit from '../images/ProductCard/indesit.png';
+import Description from './Description';
+import Contacts from './Contacts';
+import CardMore from './CardMore';
+import Gallery from './Gallery';
 
-type ProductCardPropsType = {
-  // title: string;
-  // alt: string;
-  // icon: string;
-  // description: string;
-  // price: string;
-  // date: string;
-  // views: string;
-  // arrowBack: string;
-  // descriptionTitle: string;
-  // locationTitle: string;
-  children: React.ReactNode;
-  // img: string;
-};
-
-const ProductCard = (props: ProductCardPropsType) => {
-  // const { title, locationTitle } = props;
-  // const { alt } = props;
-  // const { descriptionTitle, description } = props;
-  // const { price } = props;
-  // const { date, arrowBack, views, icon } = props;
-  const { children } = props;
-  return (
-    <div className={style.productCard}>
-      { children }
-      {/* <div className={style.arrowBack}>
-        <img src={arrowBack} alt={alt} />
-      </div>
-      <div className={style.productCard_date}>{date}</div>
-      <div className={style.productCard_title}>{title}</div>
-      <div className={style.card_views}>
-        <img className="card_views-eye" src={icon} alt={alt} />
-        <span>{views}</span>
-      </div>
-      <CardCarousel>
-        {children}
-      </CardCarousel>
-      <div className={style.productCard_description}>
-        <p className={style.description_title}>{descriptionTitle}</p>
-        <span className={style.description_text}>
-          {description}
-        </span>
-      </div>
-      <div className={style.productCard_location}>
-        <p className={style.location_title}>{locationTitle}</p>
-        <YMaps>
-          <div>
-            <Map defaultState={{ center: [56.299856, 43.982585], zoom: 9 }} />
-          </div>
-        </YMaps>
-      </div>
-      <div>
-        <div className={style.productCard_price}>{price}</div>
-        <Button />
-      </div> */}
+const ProductCard = () => (
+  <div className={style.productCard}>
+    <div className={style.productCard_left}>
+      <Preview
+        title="Стиральная машина Bosch"
+        date="14 апреля 2022"
+        views="356"
+      />
+      <Gallery />
+      <Description
+        title="Описание:"
+        description="Стиральная машина в отличном состянии, чистая, без накипи.
+        С машиной отдам новый шланг для подключения воды и упаковку средства против накипи."
+        locationTitle="Местоположение:  г. Кстово"
+      />
     </div>
-  );
-};
+    <div className={style.productCard_right}>
+      <Contacts price="22 500 P" />
+      <div className={style.cardMore}>
+        <p className={style.cardMore_title}> Смотрите также:</p>
+        <CardMore
+          title="Стиральная машина Samsung"
+          img={samsung}
+          alt="Стиральная машина Samsung"
+        />
+        <CardMore
+          title="Стиральная машина Indesit"
+          img={indesit}
+          alt="Стиральная машина Indesit"
+        />
+      </div>
+    </div>
+  </div>
+);
 
 export default ProductCard;

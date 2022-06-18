@@ -2,7 +2,7 @@ import React from 'react';
 // import { Button } from 'antd';
 import Button from '../../components/common/Button';
 import Banner from '../../components/common/Banner';
-import Card from '../../components/common/Card/Card';
+import Card from '../../components/common/ProductCard/Card/Card';
 import Nav from '../../components/common/Nav/nav';
 import machine from '../../components/common/images/cards/machine.png';
 import eye from '../../components/common/images/icons/eye.svg';
@@ -14,12 +14,11 @@ import coffeeMachine from '../../components/common/images/cards/coffeeMachine.pn
 import bag from '../../components/common/images/cards/bag.png';
 import shoes from '../../components/common/images/cards/shoes.png';
 import snowboarding from '../../components/common/images/cards/snowboarding.png';
-import PageWrapper from '../../components/common/PageWrapper';
 import arrow from '../../components/common/images/icons/arrow.svg';
 import style from './MainPage.module.scss';
 
 const MainPage = () => (
-  <PageWrapper>
+  <>
     <div className="main_banner">
       <Banner />
     </div>
@@ -128,7 +127,7 @@ const MainPage = () => (
       <img src={arrow} alt="arrow" />
       <Button title="Загрузить еще" onClick={() => console.log('Загрузить еще')} />
     </div>
-  </PageWrapper>
+  </>
 );
 
 export default MainPage;

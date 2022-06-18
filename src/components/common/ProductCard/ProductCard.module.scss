@@ -1,3 +1,59 @@
 .productCard {
-  
+  display: flex;
+  max-width: 1172px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+  justify-content: space-between;
+}
+
+.productCard_left {
+  display: flex;
+  flex-direction: column;
+  max-width: 766px;
+  margin-right: 100px;
+}
+
+.carousel_item {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.productCard_right {
+  display: flex;
+  flex-direction: column;
+}
+
+.productCard_price {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #2A2F37;
+  margin-top: 88px;
+  margin-bottom: 24px;
+}
+
+.productCard_contact {
+  margin-bottom: 72px;
+}
+
+.productCard_contact button {
+  padding: 8px 16px;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.cardMore_title {
+  margin-top: 72px;
+  margin-bottom: 24px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #2A2F37;
 }

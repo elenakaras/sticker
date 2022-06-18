@@ -1,0 +1,51 @@
+.preview {
+  margin-top: 32px;
+}
+
+.arrowBack {
+  margin-bottom: 32px;
+}
+
+.arrowBack button {
+  border: none; 
+  background: none;
+  cursor: pointer;
+}
+
+.productCard_date {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #2A2F37;
+  background-color: rgba(42, 47, 55, 0.06);
+  width: 154px;
+  height: 40px;
+  padding-left: 16px;
+  margin-bottom: 24px;
+}
+
+.productCard_title {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #2A2F37;
+  margin-bottom: 24px;
+}
+
+.card_views {
+  display: flex;
+  justify-content: space-between;
+  width: 57px;
+  height: 24px;
+  left: 376px;
+  top: 328px;
+  opacity: 0.4;
+  margin-bottom: 24px;
+}
+
