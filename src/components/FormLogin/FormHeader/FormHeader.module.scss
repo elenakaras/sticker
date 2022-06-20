@@ -1,0 +1,26 @@
+.form_header {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.form_title {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #2A2F37;
+}
+
+.form_suptitle {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #2A2F37;
+  opacity: 0.4;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Button } from 'antd';
 import Button from '../../components/common/Button';
-import Banner from '../../components/common/Banner';
+import Banner from './Banner';
 import Card from '../../components/common/ProductCard/Card/Card';
 import Nav from '../../components/common/Nav/nav';
 import machine from '../../components/common/images/cards/machine.png';
@@ -18,12 +18,15 @@ import arrow from '../../components/common/images/icons/arrow.svg';
 import style from './MainPage.module.scss';
 
 const MainPage = () => (
-  <>
+  <div className={style.container}>
     <div className="main_banner">
       <Banner />
     </div>
     <div className="main_menu">
       <Nav />
+    </div>
+    <div className={style.title}>
+      <h3>Вся лента</h3>
     </div>
     <div className={style.main_content}>
       <Card
@@ -127,7 +130,7 @@ const MainPage = () => (
       <img src={arrow} alt="arrow" />
       <Button title="Загрузить еще" onClick={() => console.log('Загрузить еще')} />
     </div>
-  </>
+  </div>
 );
 
 export default MainPage;

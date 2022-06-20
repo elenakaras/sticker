@@ -1,6 +1,19 @@
-.main_content {
+.container {
   max-width: 1171px;
   margin: 0 auto;
+}
+
+.title {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #2C2D2E;
+  margin-bottom: 40px;
+}
+
+.main_content {
   display: flex;
   justify-content: space-between;
   flex-wrap:wrap;

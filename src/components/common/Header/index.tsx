@@ -24,7 +24,7 @@ const Header = () => (
     </div>
     <div className={style.header_account}>
       <img src={user} alt="user" />
-      <NavLink to="/auth"><span>Войти</span></NavLink>
+      <NavLink to="/login"><span>Войти</span></NavLink>
     </div>
   </header>
 );
