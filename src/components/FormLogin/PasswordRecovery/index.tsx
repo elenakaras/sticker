@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form, Input } from 'antd';
 import style from './PasswordRecovery.module.scss';
 
@@ -10,6 +10,7 @@ const RecoveryPassword: React.FC = () => {
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
+  const [email, setEmail] = useState('');
 
   return (
     <div className={style.form_wrap}>
@@ -30,7 +31,13 @@ const RecoveryPassword: React.FC = () => {
           name="email"
           rules={[{ required: true, message: 'Email' }]}
               >
-          <Input className={style.input} placeholder="Email" />
+          <Input
+            className={style.input}
+            title="Email"
+            id="email"
+            value={email}
+            setValue={setEmail}
+            placeholder="Email" />
         </Form.Item>
         <Form.Item>
           <Button className={style.form_button} type="primary" htmlType="submit">

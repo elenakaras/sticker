@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import SearchResult from '../../components/common/SearchResults';
+import SearchResult from '../../components/SearchResults';
 import style from './SearchResult.module.scss';
-import Pagination from '../../components/common/Pagination';
+import Pagination from '../../components/Pagination';
 
 const SearchResultPage = () => (
   <div className={style.searchResult_wrap}>

@@ -1,136 +1,38 @@
-import React from 'react';
-// import { Button } from 'antd';
+import React, { useEffect, useState } from 'react';
 import Button from '../../components/common/Button';
 import Banner from './Banner';
-import Card from '../../components/common/ProductCard/Card/Card';
-import Nav from '../../components/common/Nav/nav';
-import machine from '../../components/common/images/cards/machine.png';
-import eye from '../../components/common/images/icons/eye.svg';
-import hat from '../../components/common/images/cards/hat.png';
-import hoody from '../../components/common/images/cards/hoody.png';
-import bicycle from '../../components/common/images/cards/bicycle.png';
-import headphones from '../../components/common/images/cards/headphones.png';
-import coffeeMachine from '../../components/common/images/cards/coffeeMachine.png';
-import bag from '../../components/common/images/cards/bag.png';
-import shoes from '../../components/common/images/cards/shoes.png';
-import snowboarding from '../../components/common/images/cards/snowboarding.png';
+import Nav from '../../components/Nav/nav';
 import arrow from '../../components/common/images/icons/arrow.svg';
 import style from './MainPage.module.scss';
+import MainContent from '../../components/MainContent';
 
-const MainPage = () => (
-  <div className={style.container}>
-    <div className="main_banner">
-      <Banner />
+const MainPage = () => {
+  useEffect(() => console.log('MAIN_PAGE - MOUNT'), []);
+  const [ListVisible, setListVisible] = useState(false);
+  const handler = () => {
+    setListVisible(!ListVisible);
+  };
+  return (
+    <div className={style.container}>
+      <div className="main_banner">
+        <Banner />
+      </div>
+      <div className="main_menu">
+        <Nav />
+      </div>
+      <div className={style.title}>
+        <h3>Вся лента</h3>
+      </div>
+      <div className={style.main_content}>
+        <MainContent />
+      </div>
+      {ListVisible || <MainContent />}
+      <div className={style.button_more}>
+        <img src={arrow} alt="arrow" />
+        <Button title="Загрузить еще" onClick={handler} />
+      </div>
     </div>
-    <div className="main_menu">
-      <Nav />
-    </div>
-    <div className={style.title}>
-      <h3>Вся лента</h3>
-    </div>
-    <div className={style.main_content}>
-      <Card
-        title="Стиральная машина Bosch"
-        img={machine}
-        alt="Стиральная машина"
-        section="Техника"
-        description="Машина в хорошем состоянии.
-        Возможен разумный торг"
-        price="22 500 Р"
-        date="14 апреля 2021"
-        icon={eye}
-        views="356" />
-      <Card
-        title="Шапочка"
-        img={hat}
-        alt="шапочка"
-        section="Одежда"
-        description="Шапочка детская на ребенка 7-10 лет. 60% шерсть, 40% вискоза"
-        price="500 Р "
-        date="14 апреля 2021"
-        icon={eye}
-        views="356" />
-      <Card
-        title="Толстовка"
-        img={hoody}
-        alt="толстовка"
-        section="Одежда"
-        description="Новая толстовка белая без принта с карманом"
-        price="2000 Р "
-        date="14 апреля 2021"
-        icon={eye}
-        views="356" />
-      <Card
-        title="Велосипед"
-        img={bicycle}
-        alt="Стиральная машина"
-        section="Спорт"
-        description="Велосипед в отличном состоянии.
-        Ретро-стиль"
-        price="28 000 Р"
-        date="14 апреля 2021"
-        icon={eye}
-        views="356" />
-      <Card
-        title="Наушники"
-        img={headphones}
-        alt="наушники"
-        section="Техника"
-        description="Наушники почти новые.
-        Срок эксплуатации - меньше месяца"
-        price="4 500 Р "
-        date="14 апреля 2021"
-        icon={eye}
-        views="356" />
-      <Card
-        title="Кофемашина"
-        img={coffeeMachine}
-        alt="кофемашина"
-        section="Техника"
-        description="Кофемашина с капучинатором.
-        Пакет кофе 1 кг. - в подарок"
-        price="2000 Р "
-        date="14 апреля 2021"
-        icon={eye}
-        views="356" />
-      <Card
-        title="Сумка женская"
-        img={bag}
-        alt="сумка женская"
-        section="Одежда"
-        description="Итальянска сумка из натуральной кожи
-        Качественная фурнитура,состояние новой"
-        price="7 500 Р "
-        date="14 апреля 2021"
-        icon={eye}
-        views="356" />
-      <Card
-        title="Ботинки мужские зимние"
-        img={shoes}
-        alt="ботинки мужские зимние"
-        section="Одежда"
-        description="Ботинки почти новые, качественные, теплые.
-        Носили 2 недели"
-        price="8 000 Р "
-        date="14 апреля 2021"
-        icon={eye}
-        views="356" />
-      <Card
-        title="Доска для сноубординга"
-        img={snowboarding}
-        alt="доска для сноубординга"
-        section="Спорт"
-        description="Качественная красивая доска с креплениями"
-        price="43 000 Р "
-        date="14 апреля 2021"
-        icon={eye}
-        views="356" />
-    </div>
-    <div className={style.button_more}>
-      <img src={arrow} alt="arrow" />
-      <Button title="Загрузить еще" onClick={() => console.log('Загрузить еще')} />
-    </div>
-  </div>
-);
+  );
+};
 
 export default MainPage;

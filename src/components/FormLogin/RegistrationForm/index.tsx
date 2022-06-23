@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'antd/dist/antd.css';
 import { Form, Input, Button, Checkbox, Tabs } from 'antd';
 import type { CheckboxChangeEvent } from 'antd/es/checkbox';
 // import { NavLink } from 'react-router-dom';
@@ -20,6 +19,21 @@ const RegistrationForm: React.FC = () => {
   const onChange = (e: CheckboxChangeEvent): void => {
     console.log('checked = ', e.target.checked);
     setChecked(e.target.checked);
+  };
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [hasError, setHasError] = useState(false);
+
+  const submitHandler = () => {
+    if (password.length > 8) {
+      setHasError(false);
+      console.log({ email, password });
+    } else {
+      setHasError(true);
+      console.log('Error');
+    }
   };
 
   return (
@@ -52,23 +66,50 @@ const RegistrationForm: React.FC = () => {
           name="email"
           rules={[{ required: true, message: 'Email' }]}
           >
-          <Input className={style.input} placeholder="Email" />
+          <Input
+            className={style.input}
+            title="Email"
+            id="email"
+            placeholder="Email"
+            value={email}
+            setValue={setEmail}
+            type="text"
+          />
         </Form.Item>
 
         <Form.Item
           name="password"
           rules={[{ required: true, message: 'Пароль' }]}
           >
-          <Input.Password className={style.input} placeholder="Пароль" />
+          <Input.Password
+            className={style.input}
+            title="Password"
+            id="password"
+            placeholder="Пароль"
+            value={password}
+            setValue={setPassword}
+            type="password"
+         />
         </Form.Item>
 
         <Form.Item
           name="password"
           rules={[{ required: true, message: 'Повторите пароль' }]}
           >
-          <Input.Password className={style.input} placeholder="Повторите пароль" />
+          <Input.Password
+            className={style.input}
+            title="Password"
+            id="repeatPassword"
+            placeholder="Повторите пароль"
+            value={password}
+            setValue={setPassword}
+            type="password" />
         </Form.Item>
-
+        {hasError && (
+          <div>
+            <span>Пароль должен быть больше 8 символов</span>
+          </div>
+        )}
         <div className={style.form_checkbox}>
           <Checkbox checked={checked} disabled={disabled} onChange={onChange}>
             Принимаю условия
@@ -79,7 +120,11 @@ const RegistrationForm: React.FC = () => {
         </div>
 
         <Form.Item>
-          <Button className={style.form_button} type="primary" htmlType="submit">
+          <Button
+            className={style.form_button}
+            onClick={submitHandler}
+            type="primary"
+            htmlType="submit">
             Создать аккаунт
           </Button>
         </Form.Item>
