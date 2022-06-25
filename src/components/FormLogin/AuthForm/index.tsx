@@ -1,7 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Input, Button } from 'antd';
 import { NavLink } from 'react-router-dom';
+
 import style from './AuthForm.module.scss';
+
+/* eslint-disable no-template-curly-in-string */
+const validateMessages = {
+  required: '${label} is required!',
+  types: {
+    email: '${label} Некорректный email!',
+    number: '${label} is not a valid number!',
+  },
+  number: {
+    range: '${label} must be between ${min} and ${max}',
+  },
+};
+/* eslint-enable no-template-curly-in-string */
 
 const AuthForm: React.FC = () => {
   const onFinish = (values: any) => {
@@ -12,67 +26,39 @@ const AuthForm: React.FC = () => {
     console.log('Failed:', errorInfo);
   };
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const [hasError, setHasError] = useState(false);
-
-  const submitHandler = () => {
-    if (password.length > 8) {
-      setHasError(false);
-      console.log({ email, password });
-    } else {
-      setHasError(true);
-      console.log('Error');
-    }
-  };
-
   return (
     <div className={style.form_wrap}>
       <Form
         className={style.form}
-        name="basic"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 16 }}
-        initialValues={{ remember: true }}
+        name="nest-messages"
+        validateMessages={validateMessages}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
-        autoComplete="off"
-            >
+      >
         <Form.Item
           name="email"
-          rules={[{ required: true, message: 'Email' }]}
+          rules={[{ required: true, type: 'email', message: 'Некорректный формат адреса электронной почты' }]}
             >
           <Input
             className={style.input}
             title="Email"
             id="email"
             placeholder="Email"
-            value={email}
-            setValue={setEmail}
-            type="text"
           />
         </Form.Item>
 
         <Form.Item
           name="password"
-          rules={[{ required: true, message: 'Пароль' }]}
+          rules={[{ required: true, min: 8, max: 20, message: 'Пароль должен быть не менее 8 символов' }]}
               >
           <Input.Password
             className={style.input}
             title="Password"
             id="password"
             placeholder="Пароль"
-            value={password}
-            setValue={setPassword}
-            type="password"
           />
         </Form.Item>
-        {hasError && (
-          <div>
-            <span>Пароль должен быть больше 8 символов</span>
-          </div>
-        )}
+
         <NavLink className={style.navLink_btn} to="/recovery">
           <div className={style.remember_password}>
             Забыли пароль?
@@ -81,7 +67,6 @@ const AuthForm: React.FC = () => {
         <Form.Item>
           <Button
             className={style.form_button}
-            onClick={submitHandler}
             type="primary"
             htmlType="submit">
             Войти
@@ -93,3 +78,6 @@ const AuthForm: React.FC = () => {
 };
 
 export default AuthForm;
+
+// rules={[{ type: 'number', min: 0, max: 99 }]}>
+// вставить в графу имя в форме регистрации( до 15 смиволов дб по ТЗ)

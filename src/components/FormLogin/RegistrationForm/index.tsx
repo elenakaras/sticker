@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Checkbox, Tabs } from 'antd';
+import { Form, Input, Button, Checkbox } from 'antd';
 import type { CheckboxChangeEvent } from 'antd/es/checkbox';
-// import { NavLink } from 'react-router-dom';
 import style from './RegistrationForm.module.scss';
 
 const RegistrationForm: React.FC = () => {
@@ -19,21 +18,6 @@ const RegistrationForm: React.FC = () => {
   const onChange = (e: CheckboxChangeEvent): void => {
     console.log('checked = ', e.target.checked);
     setChecked(e.target.checked);
-  };
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const [hasError, setHasError] = useState(false);
-
-  const submitHandler = () => {
-    if (password.length > 8) {
-      setHasError(false);
-      console.log({ email, password });
-    } else {
-      setHasError(true);
-      console.log('Error');
-    }
   };
 
   return (
@@ -64,52 +48,55 @@ const RegistrationForm: React.FC = () => {
 
         <Form.Item
           name="email"
-          rules={[{ required: true, message: 'Email' }]}
+          rules={[{ required: true, type: 'email', message: 'Некорректный формат адреса электронной почты' }]}
           >
           <Input
             className={style.input}
             title="Email"
             id="email"
             placeholder="Email"
-            value={email}
-            setValue={setEmail}
-            type="text"
+
           />
         </Form.Item>
 
         <Form.Item
           name="password"
-          rules={[{ required: true, message: 'Пароль' }]}
+          rules={[{ required: true, min: 8, max: 20, message: 'Пароль должен быть не менее 8 символов' }]}
           >
           <Input.Password
             className={style.input}
             title="Password"
             id="password"
             placeholder="Пароль"
-            value={password}
-            setValue={setPassword}
-            type="password"
          />
         </Form.Item>
 
         <Form.Item
-          name="password"
-          rules={[{ required: true, message: 'Повторите пароль' }]}
-          >
+          name="confirm"
+          dependencies={['password']}
+          hasFeedback
+          rules={[
+            {
+              required: true,
+              message: 'Please confirm your password!',
+            },
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue('password') === value) {
+                  return Promise.resolve();
+                }
+                return Promise.reject(new Error('Пароли не совпадают'));
+              },
+            }),
+          ]}
+        >
           <Input.Password
             className={style.input}
             title="Password"
             id="repeatPassword"
             placeholder="Повторите пароль"
-            value={password}
-            setValue={setPassword}
-            type="password" />
+           />
         </Form.Item>
-        {hasError && (
-          <div>
-            <span>Пароль должен быть больше 8 символов</span>
-          </div>
-        )}
         <div className={style.form_checkbox}>
           <Checkbox checked={checked} disabled={disabled} onChange={onChange}>
             Принимаю условия
@@ -118,11 +105,9 @@ const RegistrationForm: React.FC = () => {
             Пользовательского соглашения
           </Checkbox>
         </div>
-
         <Form.Item>
           <Button
             className={style.form_button}
-            onClick={submitHandler}
             type="primary"
             htmlType="submit">
             Создать аккаунт

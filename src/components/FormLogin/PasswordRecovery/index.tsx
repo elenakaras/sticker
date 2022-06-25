@@ -10,7 +10,6 @@ const RecoveryPassword: React.FC = () => {
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
-  const [email, setEmail] = useState('');
 
   return (
     <div className={style.form_wrap}>
@@ -29,14 +28,12 @@ const RecoveryPassword: React.FC = () => {
             >
         <Form.Item
           name="email"
-          rules={[{ required: true, message: 'Email' }]}
+          rules={[{ required: true, type: 'email', message: 'Некорректный формат адреса электронной почты' }]}
               >
           <Input
             className={style.input}
             title="Email"
             id="email"
-            value={email}
-            setValue={setEmail}
             placeholder="Email" />
         </Form.Item>
         <Form.Item>
