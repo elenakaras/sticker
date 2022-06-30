@@ -4,19 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 import style from './AuthForm.module.scss';
 
-/* eslint-disable no-template-curly-in-string */
-const validateMessages = {
-  required: '${label} is required!',
-  types: {
-    email: '${label} Некорректный email!',
-    number: '${label} is not a valid number!',
-  },
-  number: {
-    range: '${label} must be between ${min} and ${max}',
-  },
-};
-/* eslint-enable no-template-curly-in-string */
-
 const AuthForm: React.FC = () => {
   const onFinish = (values: any) => {
     console.log('Success:', values);
@@ -25,6 +12,19 @@ const AuthForm: React.FC = () => {
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
+
+  /* eslint-disable no-template-curly-in-string */
+  const validateMessages = {
+    required: '${label} is required!',
+    types: {
+      email: '${label} Некорректный email!',
+      number: '${label} is not a valid number!',
+    },
+    number: {
+      range: '${label} must be between ${min} and ${max}',
+    },
+  };
+  /* eslint-enable no-template-curly-in-string */
 
   return (
     <div className={style.form_wrap}>
@@ -78,6 +78,3 @@ const AuthForm: React.FC = () => {
 };
 
 export default AuthForm;
-
-// rules={[{ type: 'number', min: 0, max: 99 }]}>
-// вставить в графу имя в форме регистрации( до 15 смиволов дб по ТЗ)

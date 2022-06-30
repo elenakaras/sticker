@@ -1,10 +1,10 @@
 .header {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
   max-width: 1168px;
-  min-height: 72px;
+  height: 72px;
   margin: 0 auto;
+  align-items: center;
   
   & > div {
     display: flex;
@@ -24,8 +24,8 @@
 }
 
 .header_search {
-  max-width: 565px;
-  max-height: 36px;
+  width: 565px;
+  // max-height: 36px;
   border: 1px solid #4877F2;
   box-sizing: border-box;
   border-radius: 4px;
@@ -44,34 +44,18 @@
 
 .header_input {
   font-size: 16px;
-  border: 1px solid #4877F2;
+  border: 0px solid #4877F2;
   box-sizing: border-box;
   border-radius: 4px; 
   max-width: 469px;
-  max-height: 18px;
+  max-height: 100%;
   position: relative;
+  outline:none;
 }
 
 .button_search .button {
-  width: 96px;
-  height: 36px;
-  padding: 6px 26px;
-  color: white;
-  text-decoration: none;
-  outline: none;
-  border-width: 2px 0;
-  border-style: solid none;
-  border-radius: 4px;
-  background-color: #4877F2;
-  border-radius: 0px 4px 4px 0px;
-  transition: 0.2s;
-
-  display: flex;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-
   position: absolute;
+  
 }
 
 .button_search:hover {

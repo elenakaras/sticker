@@ -8,9 +8,41 @@ import MainContent from '../../components/MainContent';
 
 const MainPage = () => {
   useEffect(() => console.log('MAIN_PAGE - MOUNT'), []);
-  const [ListVisible, setListVisible] = useState(false);
+
+  const [count, setCount] = useState(0);
   const handler = () => {
-    setListVisible(!ListVisible);
+    setCount(count + 1);
+    console.log(count);
+  };
+  const getMainContent = () => {
+    if (count === 0) {
+      return <MainContent />;
+    }
+    if (count === 1) {
+      return (
+        <div>
+          <MainContent />
+          <MainContent />
+        </div>
+      );
+    }
+    if (count === 2) {
+      return (
+        <div>
+          <MainContent />
+          <MainContent />
+          <MainContent />
+        </div>
+      );
+    }
+    return (
+      <div>
+        <MainContent />
+        <MainContent />
+        <MainContent />
+        <MainContent />
+      </div>
+    );
   };
   return (
     <div className={style.container}>
@@ -24,12 +56,11 @@ const MainPage = () => {
         <h3>Вся лента</h3>
       </div>
       <div className={style.main_content}>
-        <MainContent />
+        {getMainContent()}
       </div>
-      {ListVisible || <MainContent />}
       <div className={style.button_more}>
         <img src={arrow} alt="arrow" />
-        <Button title="Загрузить еще" onClick={handler} />
+        <Button title="Загрузить еще" onClick={() => handler()} />
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ const items = [
 ];
 
 const Gallery = () => (
-  <AliceCarousel mouseTracking items={items} />
+  <AliceCarousel disableButtonsControls mouseTracking items={items} />
 );
 
 export default Gallery;
