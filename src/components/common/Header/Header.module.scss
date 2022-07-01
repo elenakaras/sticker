@@ -26,6 +26,9 @@
 .header_search {
   width: 565px;
   // max-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #4877F2;
   box-sizing: border-box;
   border-radius: 4px;
@@ -47,15 +50,11 @@
   border: 0px solid #4877F2;
   box-sizing: border-box;
   border-radius: 4px; 
-  max-width: 469px;
+  max-width: 467px;
+  width: 498px;
   max-height: 100%;
   position: relative;
-  outline:none;
-}
-
-.button_search .button {
-  position: absolute;
-  
+  outline: none;
 }
 
 .button_search:hover {
